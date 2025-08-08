@@ -1,0 +1,1 @@
+*.pyc\n__pycache__/\n.venv/\nresults/\n*.xtc\n*.edr\n*.tpr\n*.cpt\n*.log\n*.trr\n.gromacs/\n.DS_Store\n
