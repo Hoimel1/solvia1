@@ -1,0 +1,43 @@
+
+=== Solvia Lokale Umgebung – Setup startet (Fri Aug  8 19:01:44 UTC 2025) ===
+Linux amp-rbc-tox 6.8.0-1033-gcp #35~22.04.1-Ubuntu SMP Thu Jul  3 14:26:25 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+32
+GPU 0: NVIDIA L4 (UUID: GPU-41269e57-acd2-b98d-7d8e-13c9118ffdeb)
+name, driver_version, compute_cap
+NVIDIA L4, 570.158.01, 8.9
+Hit:1 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease
+Hit:4 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:5 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:6 https://packages.cloud.google.com/apt google-cloud-ops-agent-jammy-2 InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages have been kept back:
+  libnvidia-nscq-550 nvidia-fabricmanager-550 nvidia-fabricmanager-570
+The following packages will be upgraded:
+  cuda-toolkit-config-common libnvidia-nscq-570 libxnvctrl0
+3 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Need to get 512 kB of archives.
+After this operation, 814 kB of additional disk space will be used.
+Get:1 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  cuda-toolkit-config-common 13.0.48-1 [17.4 kB]
+Get:2 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  libnvidia-nscq-570 570.172.08-1 [457 kB]
+Get:3 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  libxnvctrl0 580.65.06-0ubuntu1 [37.2 kB]
+Fetched 512 kB in 0s (2536 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 136983 files and directories currently installed.)
+Preparing to unpack .../cuda-toolkit-config-common_13.0.48-1_all.deb ...
+Unpacking cuda-toolkit-config-common (13.0.48-1) over (12.9.79-1) ...
+Preparing to unpack .../libnvidia-nscq-570_570.172.08-1_amd64.deb ...
+Unpacking libnvidia-nscq-570 (570.172.08-1) over (570.158.01-0ubuntu0.22.04.1) ...
+Preparing to unpack .../libxnvctrl0_580.65.06-0ubuntu1_amd64.deb ...
+Unpacking libxnvctrl0:amd64 (580.65.06-0ubuntu1) over (510.47.03-0ubuntu1) ...
+Setting up cuda-toolkit-config-common (13.0.48-1) ...
+Setting up libxnvctrl0:amd64 (580.65.06-0ubuntu1) ...
+Setting up libnvidia-nscq-570 (570.172.08-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.10) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...

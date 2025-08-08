@@ -1,0 +1,25 @@
+; nvt.mdp – 100 ps Equilibration bei 310 K, posres auf Protein
+include          = -I../top
+integrator       = md
+nsteps           = 50000        ; 100 ps (dt=0.002 ps)
+dt               = 0.002
+cutoff-scheme    = Verlet
+coulombtype      = Reaction-Field
+rcoulomb         = 1.1
+rvdw             = 1.1
+constraint_algorithm = lincs
+constraints      = h-bonds
+continuation     = no
+
+; Temperatur-Regelung
+ref_t            = 310
+annealing        = no
+tcoupl           = v-rescale
+tc-grps          = Protein Membrane Water_and_ions
+	ref_t          = 310 310 310
+	tau_t          = 0.1 0.1 0.1
+
+pcoupl           = no
+pbc              = xyz
+dispCorr         = EnerPres
+

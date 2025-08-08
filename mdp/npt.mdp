@@ -1,0 +1,31 @@
+; npt.mdp – 5 ns Semi-isotropes NPT bei 310 K & 1 bar
+include          = -I../top
+integrator       = md
+nsteps           = 2500000      ; 5 ns (dt=0.002 ps)
+dt               = 0.002
+cutoff-scheme    = Verlet
+coulombtype      = Reaction-Field
+rcoulomb         = 1.1
+rvdw             = 1.1
+constraint_algorithm = lincs
+constraints      = h-bonds
+continuation     = yes
+
+; Temperatur
+ref_t            = 310
+annealing        = no
+tcoupl           = v-rescale
+tc-grps          = Protein Membrane Water_and_ions
+	ref_t          = 310 310 310
+	tau_t          = 0.1 0.1 0.1
+
+; Druck
+pcoupl           = Parrinello-Rahman
+pcoupltype       = semiisotropic
+ref_p            = 1.0 1.0
+compressibility  = 3e-4 3e-4
+tau_p            = 12.0
+
+pbc              = xyz
+dispCorr         = EnerPres
+

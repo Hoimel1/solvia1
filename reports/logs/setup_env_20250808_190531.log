@@ -1,0 +1,28 @@
+nohup: ignoring input
+
+=== Solvia Lokale Umgebung – Setup startet (Fri Aug  8 19:05:31 UTC 2025) ===
+Linux amp-rbc-tox 6.8.0-1033-gcp #35~22.04.1-Ubuntu SMP Thu Jul  3 14:26:25 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+32
+GPU 0: NVIDIA L4 (UUID: GPU-41269e57-acd2-b98d-7d8e-13c9118ffdeb)
+name, driver_version, compute_cap
+NVIDIA L4, 570.158.01, 8.9
+Hit:1 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:3 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:4 http://us-east4.gce.archive.ubuntu.com/ubuntu jammy-backports InRelease
+Hit:5 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64  InRelease
+Hit:6 https://packages.cloud.google.com/apt google-cloud-ops-agent-jammy-2 InRelease
+Reading package lists...
+W: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+The following packages have been kept back:
+  libnvidia-nscq-550 nvidia-fabricmanager-550 nvidia-fabricmanager-570
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+E: Unable to locate package libdssp-2
+E: Unable to locate package libdssp-dev
