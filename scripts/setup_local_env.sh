@@ -50,7 +50,17 @@ sudo apt-get install -y build-essential cmake git wget curl libfftw3-dev libgsl-
 if ! command -v mamba &>/dev/null; then
   echo "[INFO] Installiere Mambaforge (user-space) …"
   MAMBA_INSTALLER="Mambaforge-Linux-x86_64.sh"
-  wget -q "https://github.com/conda-forge/miniforge/releases/latest/download/${MAMBA_INSTALLER}" -O /tmp/${MAMBA_INSTALLER}
+  LATEST_URL="https://github.com/conda-forge/miniforge/releases/latest/download/${MAMBA_INSTALLER}"
+  FALLBACK_URL="https://github.com/conda-forge/miniforge/releases/download/24.3.0-0/${MAMBA_INSTALLER}"
+
+  echo "[INFO] Lade Mambaforge herunter..."
+  if ! curl -fsSL "$LATEST_URL" -o "/tmp/${MAMBA_INSTALLER}"; then
+      echo "[WARN] Download von 'latest' fehlgeschlagen. Versuche Fallback-URL..."
+      if ! curl -fsSL "$FALLBACK_URL" -o "/tmp/${MAMBA_INSTALLER}"; then
+          echo "[ERROR] Mambaforge-Download von allen Quellen fehlgeschlagen. Breche ab." >&2
+          exit 1
+      fi
+  fi
   bash /tmp/${MAMBA_INSTALLER} -b -p "$HOME/mambaforge"
   eval "$($HOME/mambaforge/bin/conda shell.bash hook)"
   conda activate
